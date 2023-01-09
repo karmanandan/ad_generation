@@ -1,6 +1,6 @@
 # ad_generation
-REquirements:
-openai
-streamlit
+Requirements: \
+openai \
+streamlit \
 
 run: streamlit run app.py
