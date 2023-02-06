@@ -28,7 +28,7 @@ features_prompt = st.text_area(
 )
 
 # api key
-openai.api_key = "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" # enter your api key here
+openai.api_key = "" # enter your api key here
 
 
 def add_creator():
