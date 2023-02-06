@@ -28,7 +28,7 @@ features_prompt = st.text_area(
 )
 
 # api key
-openai.api_key =  # enter your api key here
+openai.api_key = "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" # enter your api key here
 
 
 def add_creator():
@@ -91,7 +91,7 @@ with st.container():
         img1_bg = Image.open("bg_img.jpeg")
         text_1 =  output_generations[1][0]
         draw = ImageDraw.Draw(img1_bg)
-        font = ImageFont.truetype("arial.ttf", 20)  # load font
+        font = ImageFont.truetype("arial.ttf", 25)  # load font
         W,H = img1_bg.size
         _, _, w, h = draw.textbbox((0, 0), text_1, font=font)
         new_width = (W - w) / 2
@@ -101,16 +101,16 @@ with st.container():
         # img_1= write_text_on_images(img1_bg, text_1)
 
         img2_bg = Image.open("img_2.jpeg")
+        W2,H2 = img2_bg.size
         text_2 =  output_generations[1][1]
-        draw = ImageDraw.Draw(img2_bg)
-        font = ImageFont.truetype("arial.ttf", 20)  # load font
-        W,H = img1_bg.size
-        _, _, w, h = draw.textbbox((0, 0), text_2, font=font)
-        new_width = (W - w) / 2
-        new_height = (H - h) / 2
-        draw.text((new_width,new_height), text_2.strip('"'), font=font, fill=(0, 0, 0)) #(200, 200, 0)
+        draw2 = ImageDraw.Draw(img2_bg)
+        font2 = ImageFont.truetype("arial.ttf", 25)  # load font
+        _, _, w2, h2 = draw2.textbbox((0, 0), text_2, font=font)
+        new_width2 = (W2 - w2) / 2
+        new_height2 = (H2 - h2) / 2
+        draw2.text((new_width2,new_height2), text_2.strip('"'), font=font2, fill=(0, 0, 0)) #(200, 200, 0)
 
-        st.image([img1_bg,img2_bg], caption=["Template images for taglines","2Img"])
+        st.image([img1_bg,img2_bg], caption=["Template images for taglines_1","Template images for taglines_2"])
 
         generation_dict = {
             "ProductInfo": product_prompt,
